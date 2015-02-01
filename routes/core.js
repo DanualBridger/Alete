@@ -8,13 +8,10 @@ var fs = require("fs"),
 
 module.exports = function (app) {
     app.get('/', function(req, res){
-        // Post.find().exec(function(err, posts) {
-        //     res.render('index', {
-        //         posts: posts
-        //     });
-        // });
-        res.render('index', {
-
+        Post.find().populate('owner').exec(function(err, posts) {
+            res.render('index', {
+                posts: posts
+            });
         });
     });
 };

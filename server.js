@@ -3,7 +3,17 @@ var express = require('express'),
     path = require('path'),
     mongoose = require('mongoose'),
     lessMiddleware = require('less-middleware'),
+    marked = require ('marked'),
     app = express();
+
+mongoose.connect('mongodb://localhost:27017/social-demo', function() {
+    console.error('Connected to MongoDB.');
+});
+mongoose.connection.on('error', function() {
+    console.error('MongoDB Connection Error. Make sure MongoDB is running.');
+});
+
+app.locals.md = marked;
 
 app.set('views', path.resolve(__dirname + '/views'));
 app.set('view engine', 'jade');

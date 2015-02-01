@@ -1,16 +1,14 @@
 extends ./layout
 
 block content
-    .post
-        .header
-            img(src="http://placehold.it/50x50")
-        .body
-            p this is some random content
-    .post
-        .header
-            img(src="http://placehold.it/50x50")
-        .body
-            img(src="http://placehold.it/500x500")
-        .footer
-            span.date 16 seconds ago
-            span.actions Share | Upvote | Downvote
+    for post in posts
+        .post
+            .header
+                if (post.owner.avatar == '')
+                    img(src="http://placehold.it/50x50")
+                else
+                    img(src=post.owner.avatar)
+            .body!= md(post.content)
+            .footer
+                span.date 16 seconds ago
+                span.actions Share | Upvote | Downvote

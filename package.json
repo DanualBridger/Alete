@@ -4,7 +4,8 @@
   "description": "A social site built by and for the users",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "clear && nodemon server.js"
   },
   "keywords": [
     "social"
@@ -15,6 +16,7 @@
     "express": "^4.11.1",
     "jade": "^1.9.1",
     "less-middleware": "^1.0.4",
+    "marked": "^0.3.3",
     "mongoose": "^3.8.22",
     "underscore": "^1.7.0"
   }
