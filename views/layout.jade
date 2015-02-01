@@ -1,0 +1,38 @@
+html
+    head
+        link(rel="stylesheet" type="text/css" href="/css/core.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js")
+    body
+        #topbar
+            strong Sort feed: 
+            ul
+                li
+                    a(href="#") Hot
+                li
+                    a(href="#") Top
+                li
+                    a(href="#") Friends
+                li
+                    a(href="#") Following
+                li
+                    a(href="#") Followers
+        #sidebar
+            h3
+                strong Alexis Who 
+                span (@Who)
+            h4 Account
+            ul
+                li
+                    a(href="#") Feed!
+                li
+                    a(href="#") Messages
+            h4 Groups
+            ul
+                li
+                    a(href="#") Wikipedia
+                li
+                    a(href="#") Reddit
+                li
+                    a(href="#") Youtube
+        #content
+            block content
