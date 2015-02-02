@@ -8,7 +8,7 @@ var fs = require("fs"),
 
 module.exports = function (app) {
     app.get('/', function(req, res){
-        Post.find().populate('owner').exec(function(err, posts) {
+        Post.find({}, null, {sort: {'_id': -1}}).populate('owner').exec(function(err, posts) {
             res.render('index', {
                 posts: posts
             });

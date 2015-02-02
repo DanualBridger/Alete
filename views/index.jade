@@ -1,14 +1,23 @@
 extends ./layout
 
 block content
-    for post in posts
-        .post
-            .header
-                if (post.owner.avatar == '')
-                    img(src="http://placehold.it/50x50")
-                else
-                    img(src=post.owner.avatar)
-            .body!= md(post.content)
-            .footer
-                span.date 16 seconds ago
-                span.actions Share | Upvote | Downvote
+    //- script.
+    //-     $(document).ready(function(){
+    //-         $('#posts').isotope({
+    //-             masonry: {
+    //-                 columnWidth: 520
+    //-             }
+    //-         });
+    //-     });
+    #posts
+        for post in posts
+            .post
+                .header
+                    if (post.owner.avatar == '')
+                        img(src="http://placehold.it/50x50")
+                    else
+                        img(src=post.owner.avatar)
+                .body!= md(post.content)
+                .footer
+                    span.date 16 seconds ago
+                    span.actions Share | Upvote | Downvote
